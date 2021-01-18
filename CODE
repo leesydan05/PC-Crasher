@@ -1,0 +1,32 @@
+import tkinter as tk 
+from tkinter import * 
+from tkinter import messagebox as mb 
+import time
+  
+def call(): 
+    res = mb.askquestion('This Is A Warning','Do you really want to do this. There is no going back') 
+      
+    if res == 'yes' : 
+        youaskedforit() 
+          
+    else : 
+        mb.showinfo('Return', 'Returning to main application') 
+  
+# Driver's code 
+root = tk.Tk() 
+canvas = tk.Canvas(root,  
+                   width = 200,  
+                   height = 200) 
+  
+canvas.pack() 
+b = Button(root, 
+           text ='Are you sure about this?', 
+           command = call) 
+  
+canvas.create_window(100, 100,window = b)
+
+def youaskedforit():
+    for i in range(2000):
+        temp = tk.Toplevel()
+        temp.configure(width=5000, height=3000)
+    root.mainloop()
